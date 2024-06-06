@@ -208,5 +208,4 @@ const checkImagesLoaded = (container, callback) => {
         </div>
       </section>
     );
-
 }
