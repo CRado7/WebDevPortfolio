@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+// import WOW from 'wowjs';
 
 import profilePic from '../assets/profile-pic.png';
 import mountainBackground from '../assets/background.jpg';
