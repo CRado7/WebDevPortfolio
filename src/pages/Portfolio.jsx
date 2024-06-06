@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Isotope from 'isotope-layout';
 
 import Parlor from '../assets/parlor/ParlorThumb.png';
 import Code from '../assets/RandomCodeGenerator.png';

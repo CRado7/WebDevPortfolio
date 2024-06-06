@@ -6,7 +6,7 @@ import './index.css';
 
 // Scripts
 import './vendor/bootstrap/js/bootstrap.bundle.min.js';
-import './vendor/isotope/isotope.pkgd.min.js';
+// import './vendor/isotope/isotope.pkgd.min.js';
 
 
 // Bringing in the pages the router will use to conditionally show the appropriate views
