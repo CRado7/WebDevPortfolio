@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import WOW from 'wowjs';
+
 import profilePic from '../assets/profile-pic.png';
 import mountainBackground from '../assets/background.jpg';
 
@@ -13,8 +15,66 @@ import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Footer from './Footer';
 
+// import '../vendor/wow/wow.min.js';
+
 
 export default function Home() {
+
+  useEffect(() => {
+    // Tooltip initialization
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new window.bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Smooth scrolling
+    const smoothScrollHandler = (event) => {
+      event.preventDefault();
+      const sectionTo = event.currentTarget.getAttribute('href');
+      const offset = document.body.classList.contains('side-header') ? 0 : -50;
+      const targetElement = document.querySelector(sectionTo);
+      const targetOffsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const scrollToPosition = targetOffsetTop + offset;
+
+      window.scrollTo({
+          top: scrollToPosition,
+          behavior: 'smooth'
+      });
+    };
+
+    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', smoothScrollHandler);
+    });
+
+    // WOW.js initialization
+    // const initWow = () => {
+    //   if (!window.MutationObserver) {
+    //       console.warn('MutationObserver is not supported by your browser. Some features may not work properly.');
+    //   } else if (window.innerWidth > 767) {
+    //       const wow = new WOW.WOW({
+    //           boxClass: 'wow',
+    //           animateClass: 'animated',
+    //           offset: 0,
+    //           mobile: false,
+    //           live: true
+    //       });
+    //       wow.init();
+    //     }
+    // };
+
+    // initWow();
+
+    // window.addEventListener('resize', initWow);
+
+    // return () => {
+    //     window.removeEventListener('resize', initWow);
+    //     smoothScrollLinks.forEach(link => {
+    //         link.removeEventListener('click', smoothScrollHandler);
+    //     });
+    // };
+  }, []);
+
   return (
     <section id="home">
       <div className="hero-wrap">

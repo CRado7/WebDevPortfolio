@@ -11,7 +11,7 @@ export default function About() {
         <div className="row">
           <div className="col-lg-8 text-center text-lg-start wow fadeInUp">
             <h2 className="text-8 fw-400 mb-3">Hi, I'm <span className="fw-700 border-bottom border-3 border-primary">CHRISTOPHER</span> !</h2>
-            <p className="text-5">I am an aspiring Full Stack Web Developer with a background in Graphic Design.
+            <p className="text-5 text-right">I am an aspiring Full Stack Web Developer with a background in Graphic Design.
               Web Design and Graphic Design ignighted my interest in becoming a Full Stack Developer. As of now, my design skills are most frequently
               used to create logos and branding for start-up businesses and for making custom ski graphics and t-shirt designs.
               In my free time, I chase waves around the east coast year-round and enjoy snowboarding the mountains of Colorado and Vermont in the winter.

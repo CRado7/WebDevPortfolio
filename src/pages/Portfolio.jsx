@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Parlor from '../assets/parlor/ParlorThumb.png';
@@ -13,6 +12,54 @@ import README from '../assets/README.png';
 
 
 export default function Portfolio() {
+  useEffect(() => {
+    window.addEventListener('load', function () {
+        const portfolioFilters = document.querySelectorAll('.portfolio-filter');
+        portfolioFilters.forEach(function (el) {
+            checkImagesLoaded(el, function () {
+                const rtlVal = document.querySelector('html').getAttribute('dir') === 'rtl';
+                const $grid = new Isotope(el, {
+                    layoutMode: 'masonry',
+                    originLeft: !rtlVal
+                });
+                const portfolioMenuLinks = document.querySelectorAll('.portfolio-menu a');
+                portfolioMenuLinks.forEach(function (link) {
+                    link.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        const filterValue = this.getAttribute('data-filter');
+                        portfolioMenuLinks.forEach(function (el) {
+                            el.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        $grid.arrange({
+                            filter: filterValue
+                        });
+                    });
+                });
+            });
+        });
+    });
+}, []);
+
+const checkImagesLoaded = (container, callback) => {
+  const images = container.querySelectorAll('img');
+  let loadedImagesCount = 0;
+  images.forEach(image => {
+      if (image.complete) {
+          loadedImagesCount++;
+          if (loadedImagesCount === images.length) {
+              callback();
+          }
+      } else {
+          image.addEventListener('load', function () {
+              loadedImagesCount++;
+              if (loadedImagesCount === images.length) {
+                  callback();
+              }
+          });
+      }
+  });
+};
 
     return (
         <section id="portfolio" className="section bg-light">

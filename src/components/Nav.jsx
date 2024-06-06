@@ -1,6 +1,89 @@
+import React, { useEffect } from 'react';
+
 import Signiture from '../assets/portfolio-sig.svg'
 
 export default function Nav() {
+
+  useEffect(() => {
+    const handleScroll = () => {
+        const stickyTop = document.querySelector('#header.sticky-top .bg-transparent');
+        const stickyTopSlide = document.querySelector('#header.sticky-top-slide');
+
+        if (stickyTop) {
+            if (window.scrollY > 1) {
+                stickyTop.classList.add('sticky-on-top');
+                stickyTop.querySelector('.logo img').src = stickyTop.querySelector('.logo img').getAttribute('data-sticky-logo');
+            } else {
+                stickyTop.classList.remove('sticky-on-top');
+                stickyTop.querySelector('.logo img').src = stickyTop.querySelector('.logo img').getAttribute('data-default-logo');
+            }
+        }
+
+        if (stickyTopSlide) {
+            if (window.scrollY > 180) {
+                stickyTopSlide.querySelector('.primary-menu').classList.add('sticky-on');
+                stickyTopSlide.querySelector('.logo img').src = stickyTopSlide.querySelector('.logo img').getAttribute('data-sticky-logo');
+            } else {
+                stickyTopSlide.querySelector('.primary-menu').classList.remove('sticky-on');
+                stickyTopSlide.querySelector('.logo img').src = stickyTopSlide.querySelector('.logo img').getAttribute('data-default-logo');
+            }
+        }
+    };
+
+    const handleNavbarToggleClick = () => {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        if (navbarToggler) {
+            navbarToggler.classList.toggle('show');
+        }
+    };
+
+    const handleNavbarLinkClick = () => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        if (navbarCollapse && navbarToggler) {
+            navbarCollapse.classList.remove('show');
+            navbarToggler.classList.remove('show');
+        }
+    };
+
+    const handleCollapseToggle = (e) => {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('data-bs-target'));
+        if (target) {
+            target.classList.toggle('show');
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    document.querySelector('.navbar-toggler')?.addEventListener('click', handleNavbarToggleClick);
+    document.querySelectorAll('.navbar-nav a')?.forEach(link => {
+        link.addEventListener('click', handleNavbarLinkClick);
+    });
+    document.querySelectorAll('.navbar-side-open .collapse, .navbar-overlay .collapse')?.forEach(collapse => {
+        collapse.addEventListener('show.bs.collapse', (e) => e.preventDefault());
+        collapse.addEventListener('hide.bs.collapse', (e) => e.preventDefault());
+    });
+    document.querySelectorAll('[data-bs-toggle="collapse"]')?.forEach(toggle => {
+        toggle.addEventListener('click', handleCollapseToggle);
+    });
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+        document.querySelector('.navbar-toggler')?.removeEventListener('click', handleNavbarToggleClick);
+        document.querySelectorAll('.navbar-nav a')?.forEach(link => {
+            link.removeEventListener('click', handleNavbarLinkClick);
+        });
+        document.querySelectorAll('.navbar-side-open .collapse, .navbar-overlay .collapse')?.forEach(collapse => {
+            collapse.removeEventListener('show.bs.collapse', (e) => e.preventDefault());
+            collapse.removeEventListener('hide.bs.collapse', (e) => e.preventDefault());
+        });
+        document.querySelectorAll('[data-bs-toggle="collapse"]')?.forEach(toggle => {
+            toggle.removeEventListener('click', handleCollapseToggle);
+        });
+    };
+}, []);
+
+
   return (
   <header id="header" className="sticky-top"> 
 
