@@ -3700,3 +3700,10 @@ a
   }
   
 }
+
+/* home btns */
+@media (max-width: 768px) {
+  .hide-btn {
+    display: none;
+  }
+}

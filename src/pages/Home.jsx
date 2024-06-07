@@ -92,9 +92,9 @@ export default function Home() {
                 <h2 className="text-10 text-white text-uppercase fw-600 mb-4 wow fadeInUp">Hello! I'm Christopher Ferraro</h2>
                 <h2 className="text-8 text-white text-uppercase fw-400 mb-4 wow fadeInUp">Web Developer & Graphic Designer</h2>
                 <p className="text-5 text-light pb-3 wow fadeInUp">based in Springfield, MA.</p>
-                <a href="#about" className="btn btn-primary rounded-0 smooth-scroll wow fadeInUp mb-4">About Me</a>
-                <a href="#portfolio" className="btn btn-primary rounded-0 smooth-scroll wow fadeInUp mb-4">View My Work</a>
-                <a href="#contact" className="btn btn-primary rounded-0 smooth-scroll wow fadeInUp mb-4">Get In Touch</a>
+                <a href="#about" className="btn btn-outline-primary shadow-none rounded-0 smooth-scroll wow fadeInUp m-4">About Me</a>
+                <a href="#portfolio" className="btn btn-outline-primary shadow-none rounded-0 smooth-scroll wow fadeInUp m-4 hide-btn">View My Work</a>
+                <a href="#contact" className="btn btn-outline-primary shadow-none rounded-0 smooth-scroll wow fadeInUp m-4 hide-btn">Get In Touch</a>
               </div>
             </div>
           </div>
