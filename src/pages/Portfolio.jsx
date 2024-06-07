@@ -83,7 +83,7 @@ const checkImagesLoaded = (container, callback) => {
           <div className="portfolio wow fadeInUp parlor">
             <div className="row g-4 mt-3 portfolio-filter">
 
-            <Link className="col-sm-6 col-lg-4 parlor" to="/custom-ski-designs"><div>
+            <Link className="col-sm-6 col-lg-4 parlor" to="custom-ski-designs"><div>
               
                 <div className="portfolio-box">
                   <div className="portfolio-img"> <img className="img-fluid d-block" src={Parlor} alt="Parlor Skis"></img>
