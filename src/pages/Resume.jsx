@@ -1,5 +1,6 @@
 import DevResume from '../assets/ChristopherFerraro_Resume.pdf'
 import SprayArt from '../assets/sprayart2.svg'
+import Cert from '../assets/Ferraro, Christopher CBC Cert.pdf'
 
 export default function Resume() {
         return (
@@ -22,7 +23,8 @@ export default function Resume() {
                                 <h3 className="text-5">Web Development Certificate</h3>
                                 <p className="mb-2">University of Central Florida</p>
                                 <p className="text-white-50">This certificate was a six month online boot camp administered through <a href="https://www.edx.org">edX</a>. Topics covered
-                                include but are not limited to the MERN stack, debugging, critical thinking skills, SCRUM workflow</p>
+                                include but are not limited to the MERN stack, debugging, critical thinking skills, SCRUM workflow. You can download and view my certificarte
+                                <a href={Cert} download>here</a></p>
                             </div>
                         </div>
      
