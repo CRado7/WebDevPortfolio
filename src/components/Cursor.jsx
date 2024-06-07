@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import "../style.css";
+import "../styles/Cursor.css";
 
 function Cursor() {
-  const size = 30;
+  const size = 10;
   const circle = useRef();
   const mouse = useRef({ x: 0, y: 0 });
   const delayedMouse = useRef({ x: 0, y: 0 });

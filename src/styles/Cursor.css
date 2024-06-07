@@ -4,7 +4,10 @@
     border: none;
     border-radius: 50%;
     position: fixed;
+    width: 5px;
+    height: 5px;
     top: 0;
     left: 0;
     will-change: transform;
+    z-index: 999;
   }

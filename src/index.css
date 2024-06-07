@@ -103,14 +103,14 @@ body, html {
     }
   }
   
-  /*--- Preloader Magnific Popup ----*/
-  .mfp-container .preloader {
+  /* --- Preloader Magnific Popup ----
+  /* .mfp-container .preloader {
     background: transparent;
   }
   
   .mfp-container .preloader .lds-ellipsis div {
-    background: #fff;
-  }
+    background: #fff; 
+  } */
   
   ::selection {
     background: #f5df4e;
