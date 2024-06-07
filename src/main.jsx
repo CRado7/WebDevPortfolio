@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'custom-ski-designs',
+        path: '/custom-ski-designs',
         element: <SkiDesigns />,
       }
     ],
