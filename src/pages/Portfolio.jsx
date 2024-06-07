@@ -195,7 +195,7 @@ const checkImagesLoaded = (container, callback) => {
                       <div className="portfolio-overlay-details">
                         <p className="text-primary text-8"><i className="fas fa-image"></i></p>
                         <h5 className="text-white text-5">SLAB</h5>
-                        <span className="text-light">Surf Lifestyle & Healthy Living Blog</span>
+                        <span className="text-light">Surf Discussion Board</span>
                         <br></br>
                         <span className="text-light"><i>Case Study</i></span>
                       </div>

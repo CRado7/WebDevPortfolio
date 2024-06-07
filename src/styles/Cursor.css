@@ -11,3 +11,9 @@
     will-change: transform;
     z-index: 999;
   }
+
+  @media (max-width: 768px) {
+    .animated-cursor {
+      display: none;
+    }
+  }
