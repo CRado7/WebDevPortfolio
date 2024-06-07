@@ -9,7 +9,7 @@ export default function Nav() {
       <div className="container position-relative">
         <div className="col-auto col-lg-2 d-inline-flex ps-lg-0"> 
 
-        <Link to="/WebDevPortfolio"><img className="logo" src={Signiture} alt="Christopher"/></Link>
+        <Link to="/WebDevPortfolio/"><img className="logo" src={Signiture} alt="Christopher"/></Link>
 
         </div>
         <div className="col col-lg-8 navbar-accordion px-0">
