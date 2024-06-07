@@ -24,7 +24,7 @@ export default function Resume() {
                                 <p className="mb-2">University of Central Florida</p>
                                 <p className="text-white-50">This certificate was a six month online boot camp administered through <a href="https://www.edx.org">edX</a>. Topics covered
                                 include but are not limited to the MERN stack, debugging, critical thinking skills, SCRUM workflow. You can download and view my certificarte
-                                <a href={Cert} download>here</a></p>
+                                 <a href={Cert} download>here</a></p>
                             </div>
                         </div>
      
