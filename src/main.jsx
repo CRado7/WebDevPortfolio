@@ -19,7 +19,7 @@ import SkiDesigns from './pages/SkiCard';
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/WebDevPortfolio/',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
