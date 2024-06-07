@@ -5,7 +5,7 @@ export default function Preloader() {
     const preloader = document.querySelector('.preloader');
 
     // Set maximum time for preloader (in milliseconds)
-    const maxPreloaderTime = 3000; // 3 seconds
+    const maxPreloaderTime = 2000; // 2 seconds
 
     // Fade out the preloader after the maximum time
     setTimeout(() => {
