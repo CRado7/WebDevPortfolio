@@ -1,0 +1,10 @@
+.animated-cursor {
+    background-color: #f5df4e;;
+    pointer-events: none;
+    border: none;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    will-change: transform;
+  }
