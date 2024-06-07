@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import "./style.css";
+import "../style.css";
 
 function Cursor() {
   const size = 30;
