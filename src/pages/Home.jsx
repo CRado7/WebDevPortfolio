@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // import WOW from 'wowjs';
-import '../vendor/bootstrap/js/bootstrap.bundle.min.js';
+// import '../vendor/bootstrap/js/bootstrap.bundle.min.js';
 
 import profilePic from '../assets/profile-pic.png';
 import mountainBackground from '../assets/background.jpg';
@@ -23,10 +23,10 @@ export default function Home() {
 
   useEffect(() => {
     // Tooltip initialization
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-        return new window.bootstrap.Tooltip(tooltipTriggerEl);
-    });
+    // const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    // const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    //     return new window.bootstrap.Tooltip(tooltipTriggerEl);
+    // });
 
     // Smooth scrolling
     const smoothScrollHandler = (event) => {
