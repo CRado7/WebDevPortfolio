@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // import WOW from 'wowjs';
-import './vendor/bootstrap/js/bootstrap.bundle.min.js';
+import '../vendor/bootstrap/js/bootstrap.bundle.min.js';
 
 import profilePic from '../assets/profile-pic.png';
 import mountainBackground from '../assets/background.jpg';
