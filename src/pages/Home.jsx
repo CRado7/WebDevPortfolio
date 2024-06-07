@@ -8,6 +8,7 @@ import mountainBackground from '../assets/background.jpg';
 import Nav from '../components/Nav';
 import Preloader from '../components/Preloader';
 import BackToTop from '../components/BackToTop';
+import Cursor from '../components/Cursor';
 
 import About from './About';
 import Proficiences from './Proficiences';
@@ -104,6 +105,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Cursor />
       <Preloader />
       <Nav />
       <About />

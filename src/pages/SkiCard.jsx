@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import SkiNav from '../components/SkiNav';
 import CherryBlossom from '../assets/parlor/CherryBlossom.png';
 import RavenRising from '../assets//parlor/RavenRising.png';
@@ -12,7 +13,9 @@ import WesternSkies from '../assets/parlor/WesternSkies.png';
 import mountainBackground from '../assets/background.jpg';
 import left from '../assets/left.svg';
 import right from '../assets/right.svg';
+
 import '../styles/skiCard.css';
+import Cursor from '../components/Cursor';
 
 const designs = [
     {
@@ -89,6 +92,7 @@ export default function SkiDesigns() {
     return (
         <div className="carousel hero-bg parallax" style={{ backgroundImage: `url(${mountainBackground})` }}>
             <SkiNav />
+            <Cursor />
             <div className="carousel-designs">
                     <div className="design-description">
                         <h2>{designs[selectedIndex].name}</h2>
