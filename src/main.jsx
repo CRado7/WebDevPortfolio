@@ -6,6 +6,7 @@ import './index.css';
 
 // Scripts
 import './vendor/bootstrap/js/bootstrap.bundle.min.js';
+import './vendor/font-awesome/css/all.min.css';
 // import './vendor/isotope/isotope.pkgd.min.js';
 
 
