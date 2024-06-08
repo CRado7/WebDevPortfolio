@@ -1,6 +1,6 @@
 import SprayArt from '../assets/spray-art.svg'
 
-export default function About() {
+export default function About({showCoolArt}) {
     return (
         <section id="about" className="section">
       <div className="container"> 
@@ -9,7 +9,7 @@ export default function About() {
         <h2 className="text-10 fw-600 text-center mb-5 wow fadeInUp">Get to Know Me</h2>
         
         <div className="row">
-          <div className="col-lg-8 text-center text-lg-start wow fadeInUp">
+          <div className={showCoolArt ? "col-lg-8 text-left text-lg-start wow fadeInUp art-option" : "col-lg-12 text-left text-lg-start wow fadeInUp art-option"}>
             <h2 className="text-8 fw-400 mb-3">Hi, I'm <span className="fw-700 border-bottom border-3 border-primary">CHRISTOPHER</span> !</h2>
             <p className="text-5 text-right">I am an aspiring Full Stack Web Developer with a background in Graphic Design.
               Web Design and Graphic Design ignighted my interest in becoming a Full Stack Developer. As of now, my design skills are most frequently
@@ -18,11 +18,16 @@ export default function About() {
               I am also a part of the Springfield Rifels Rugby Club and work with the board to comeup with poster designs for fundraising opportunities.
               I have a passion for creating and problem solving, and I am excited to bring that passion to the world of web development.</p>
           </div>
-          <div className="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
-            <div className="featured-box style-4">
-              <img src={SprayArt} alt="Spray Can" className="img-fluid spray2" />
+
+          {/* Conditionally render the image based on the user's choice */}
+          {showCoolArt && (
+            <div className="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
+              <div className="featured-box style-4">
+                <img src={SprayArt} alt="Spray Can" className="img-fluid spray2" />
+              </div>
             </div>
-          </div>
+          )}
+
         </div>
         <div className="row gy-3 mt-4">
           <div className="col-6 col-lg-3 wow fadeInUp">

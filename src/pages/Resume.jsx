@@ -2,7 +2,7 @@ import DevResume from '../assets/ChristopherFerraro_Resume.pdf'
 import SprayArt from '../assets/sprayart2.svg'
 import Cert from '../assets/Ferraro, Christopher CBC Cert.pdf'
 
-export default function Resume() {
+export default function Resume({showCoolArt}) {
         return (
         <section id="resume" className="section">
                 <div className="container"> 
@@ -52,9 +52,12 @@ export default function Resume() {
                         </div>
                     </div>
                     
-                    <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <img src={SprayArt} alt="Spray Can" className="img-fluid spray" />
-                    </div>
+                    {/* Conditionally render the image based on the user's choice */}
+                    {showCoolArt && (
+                        <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <img src={SprayArt} alt="Spray Can" className="img-fluid spray" />
+                        </div>
+                    )}
                     
              
                     <h2 className="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>

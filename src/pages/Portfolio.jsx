@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Isotope from 'isotope-layout';
 
@@ -11,8 +11,23 @@ import BootMate from '../assets/bootmate.png';
 import TaskList from '../assets/TaskList.png';
 import README from '../assets/README.png';
 
+import '../styles/Popup.css';
+import Cursor from '../components/Cursor';
 
 export default function Portfolio() {
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const openPopup = () => {
+    setShowPopup(true);
+    document.body.classList.add('popup-open');
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    document.body.classList.remove('popup-open');
+  };
+
   useEffect(() => {
     window.addEventListener('load', function () {
         const portfolioFilters = document.querySelectorAll('.portfolio-filter');
@@ -156,7 +171,7 @@ const checkImagesLoaded = (container, callback) => {
                 </div>
               </div>
 
-              <div className="col-sm-6 col-lg-4 ucf inProgress" data-wow-delay="0.3s">
+              <div className="col-sm-6 col-lg-4 ucf inProgress" data-wow-delay="0.3s" onClick={openPopup}>
                 <div className="portfolio-box">
                   <div className="portfolio-img"> <img className="img-fluid d-block" src={BootMate} alt=""></img>
                     <div className="portfolio-overlay"> 
@@ -177,7 +192,7 @@ const checkImagesLoaded = (container, callback) => {
                   <div className="portfolio-img"> <img className="img-fluid d-block" src={DopeSouls} alt=""></img>
                     <div className="portfolio-overlay"> <a className="popup-vimeo stretched-link" href="https://crado7.github.io/Dope-Souls/" target="blank"></a>
                       <div className="portfolio-overlay-details">
-                        <p className="text-primary text-8"><i className="fas fa-video"></i></p>
+                        <p className="text-primary text-8"><i className="fas fa-file-alt"></i></p>
                         <h5 className="text-white text-5">Dope Souls</h5>
                         <span className="text-light">E-Commerce Landing Page</span> 
                         <br></br>
@@ -191,9 +206,9 @@ const checkImagesLoaded = (container, callback) => {
               <div className="col-sm-6 col-lg-4 caseStudy" data-wow-delay="0.2s">
                 <div className="portfolio-box">
                   <div className="portfolio-img slab"> <img className="img-fluid d-block" src={SLAB} alt=""></img>
-                    <div className="portfolio-overlay"> <a className="popup-img stretched-link" href="images/projects/project-6.jpg"></a>
+                    <div className="portfolio-overlay"> <a className="popup-img stretched-link" href="https://crado7.github.io/SLAB/" target="blank"></a>
                       <div className="portfolio-overlay-details">
-                        <p className="text-primary text-8"><i className="fas fa-image"></i></p>
+                        <p className="text-primary text-8"><i className="fas fa-file-alt"></i></p>
                         <h5 className="text-white text-5">SLAB</h5>
                         <span className="text-light">Surf Discussion Board</span>
                         <br></br>
@@ -206,7 +221,25 @@ const checkImagesLoaded = (container, callback) => {
 
             </div>
           </div>
-        </div>
-      </section>
-    );
-}
+
+          {/* Popup for BootMate project */}
+          {showPopup && (
+            <div className="popup-container">
+              <Cursor />
+              <div className="popup-content">
+                <span className="close" onClick={closePopup} alt="close">&times;</span>
+                <h2>BootMate</h2>
+                <p>
+                This is a full stack project being worked by myself and three other members from my UCF bootcamp. 
+                We are creating a database for bootcamp graduates. 
+                Users can signup, create a profile with an email, links to their socials and portfolio, projects that they are working on and if they are looking on collaboration on a specific project. 
+                Users can add projects to their own profile and view profiles of other students. 
+                The application will also allow registered users to search by student, class, or program to filter students depending on what they are looking for!
+                </p>
+              </div>
+            </div>
+          )}
+      </div>
+    </section>
+  );
+};

@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
-// import WOW from 'wowjs';
-// import '../vendor/bootstrap/js/bootstrap.bundle.min.js';
-
+import React, { useEffect, useState } from 'react';
 import profilePic from '../assets/profile-pic.png';
 import mountainBackground from '../assets/background.jpg';
 
@@ -17,68 +14,55 @@ import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Footer from './Footer';
 
-// import '../vendor/wow/wow.min.js';
-
+import '../styles/ArtChoice.css'
 
 export default function Home() {
+  const [showCoolArt, setShowCoolArt] = useState(null);
+  const [modalOpen, setModalOpen] = useState(true); // Initially, show the modal
 
   useEffect(() => {
-    // Tooltip initialization
-    // const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    // const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-    //     return new window.bootstrap.Tooltip(tooltipTriggerEl);
-    // });
+    // Disable scrolling until a choice is made
+    document.body.style.overflow = 'hidden';
 
-    // Smooth scrolling
-    const smoothScrollHandler = (event) => {
-      event.preventDefault();
-      const sectionTo = event.currentTarget.getAttribute('href');
-      const offset = document.body.classList.contains('side-header') ? 0 : -50;
-      const targetElement = document.querySelector(sectionTo);
-      const targetOffsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
-      const scrollToPosition = targetOffsetTop + offset;
-
-      window.scrollTo({
-          top: scrollToPosition,
-          behavior: 'smooth'
-      });
+    // Cleanup function
+    return () => {
+      // Re-enable scrolling
+      document.body.style.overflow = 'unset';
     };
-
-    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', smoothScrollHandler);
-    });
-
-    // WOW.js initialization
-    // const initWow = () => {
-    //   if (!window.MutationObserver) {
-    //       console.warn('MutationObserver is not supported by your browser. Some features may not work properly.');
-    //   } else if (window.innerWidth > 767) {
-    //       const wow = new WOW.WOW({
-    //           boxClass: 'wow',
-    //           animateClass: 'animated',
-    //           offset: 0,
-    //           mobile: false,
-    //           live: true
-    //       });
-    //       wow.init();
-    //     }
-    // };
-
-    // initWow();
-
-    // window.addEventListener('resize', initWow);
-
-    // return () => {
-    //     window.removeEventListener('resize', initWow);
-    //     smoothScrollLinks.forEach(link => {
-    //         link.removeEventListener('click', smoothScrollHandler);
-    //     });
-    // };
   }, []);
+
+  useEffect(() => {
+    // If the screen size is less than 991px, do not show the modal and enable scrolling
+    if (window.innerWidth < 991) {
+      setModalOpen(false);
+      document.body.style.overflow = 'unset';
+    }
+
+    // If the user has made a choice, close the modal
+    if (showCoolArt !== null) {
+      setModalOpen(false);
+      // Re-enable scrolling
+      document.body.style.overflow = 'unset';
+    }
+  }, [showCoolArt]);
+
+  const handleChoice = (choice) => {
+    setShowCoolArt(choice);
+  };
 
   return (
     <section id="home">
+      {modalOpen && (
+        <div className="art-modal-overlay">
+          <div className="art-modal">
+            <Cursor />
+            <h2>Do you want to see some cool art pieces in the layout of this portfolio or keep it simple?</h2>
+            <button className="btn btn-outline-primary shadow-none rounded-0 smooth-scroll wow fadeInUp m-2" onClick={() => handleChoice(true)}>Ya! Lets see some cool art.</button>
+            <button className="btn btn-outline-primary shadow-none rounded-0 smooth-scroll wow fadeInUp m-2" onClick={() => handleChoice(false)}>No , I like a modern layout.</button>
+          </div>
+        </div>
+      )}
+
       <div className="hero-wrap">
         <div className="hero-mask opacity-8 bg-dark"></div>
         <div className="hero-bg parallax" style={{backgroundImage: `url(${mountainBackground})`}}></div>
@@ -110,9 +94,9 @@ export default function Home() {
       <Cursor />
       <Preloader />
       <Nav />
-      <About />
+      <About showCoolArt={showCoolArt} />
       <Proficiences />
-      <Resume />
+      <Resume showCoolArt={showCoolArt} />
       <Portfolio />
       <Contact />
       <Footer />
