@@ -20,12 +20,12 @@ export default function Portfolio() {
 
   const openPopup = () => {
     setShowPopup(true);
-    document.body.classList.add('popup-open');
+    document.body.style.overflow = 'hidden';
   };
 
   const closePopup = () => {
     setShowPopup(false);
-    document.body.classList.remove('popup-open');
+    document.body.style.overflow = 'unset';
   };
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const checkImagesLoaded = (container, callback) => {
 };
 
     return (
-        <section id="portfolio" className="section bg-light">
+      <section id="portfolio" className="section bg-light">
         <div className="container"> 
 
           <p className=" text-center mb-2 wow fadeInUp"><span className="bg-primary text-dark px-2">Portfolio</span></p>

@@ -16,14 +16,14 @@ export default function Resume({showCoolArt}) {
                         <div className="col-lg-6 wow fadeInUp">
                             <h2 className="text-7 fw-600 mb-4 pb-2">My Education</h2>
                             <div className="border-start border-2 border-primary ps-3">
-                                <h3 className="text-5">Bachelor of Fine Arts</h3>
-                                <p className="mb-2">University of Massachusetts - Dartmouth</p>
-                                <p className="text-white-50">I received a BFA with a concentration in Graphic Design. The curriculum covered Brand Identity, Web Design, Color Theory, and Creative Thinking practices.</p>
-                                <hr className="my-4"></hr>
                                 <h3 className="text-5">Web Development Certificate</h3>
                                 <p className="mb-2">University of Central Florida</p>
                                 <p className="text-white-50">This certificate was a six month online boot camp administered through <a href="https://www.edx.org">edX</a>. Topics covered
                                 include but are not limited to the MERN stack, debugging, critical thinking skills, SCRUM workflow. You can download and view my certificate <a href={Cert} download> here</a></p>
+                                <hr className="my-4"></hr>
+                                <h3 className="text-5">Bachelor of Fine Arts</h3>
+                                <p className="mb-2">University of Massachusetts - Dartmouth</p>
+                                <p className="text-white-50">I received a BFA with a concentration in Graphic Design. The curriculum covered Brand Identity, Web Design, Color Theory, and Creative Thinking practices.</p>
                             </div>
                         </div>
      

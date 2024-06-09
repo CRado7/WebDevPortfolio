@@ -14,7 +14,7 @@
   .art-modal {
     background-color: #1a1a1a;
     padding: 20px;
-    width: clamp(300px, 95%, 500px);
+    width: clamp(300px, 95%, 700px);
     border-radius: 10px;
     text-align: center;
     z-index: 9999;
@@ -23,6 +23,7 @@
   .art-modal h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    padding: 15px; 
     color: #fff;
     text-align: left;
   }
@@ -34,7 +35,7 @@
     padding: 10px 20px;
     margin: 0 10px 20px 10px;
     cursor: pointer;
-    width: clamp(300px, 300px, 300px)
+    width: 95%;
   }
   
   .modal button:hover {
