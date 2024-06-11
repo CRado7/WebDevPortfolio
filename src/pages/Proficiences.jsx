@@ -69,7 +69,7 @@ export default function Proficiences() {
           <div className="scroller wow fadeInUp" data-speed="fast">
             <div className="scroller-inner">
               {images.map((image, index) => (
-                <img key={index} className="scroll" src={image} alt={`Proficiency ${index + 1}`} />
+                <img key={index} className="scroll" src={image} alt={`Proficiency ${index + 1}`} width="100" height="100" />
               ))}
             </div>
           </div>
