@@ -7,16 +7,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: #1a1a1abe;
     z-index: 9999;
   }
   
   .popup-content {
-    background-color: rgb(235, 235, 235);
+    background-color: #1a1a1a;
     width: clamp(300px, 95%, 500px);
     padding: 0px 20px 40px 20px;
-    border-radius: 5px;
-    color: #1a1a1a;
+    border-radius: 10px;
+    color: #fff;
   }
   
   .close {
@@ -24,10 +24,17 @@
     top: 10px;
     right: 10px;
     cursor: pointer;
-    color: red;
+    color: #f5df4e;
     font-size: 40px;
+    transition: 0.3s;
+    width: 150px;
+    border-radius: 5px;;
   }
 
   .popup-open {
     overflow: hidden;
+  }
+
+  .close:hover {
+    color: #f59c4e;
   }
