@@ -88,7 +88,7 @@ const checkImagesLoaded = (container, callback) => {
 
           <ul className="portfolio-menu nav nav-tabs fw-600 justify-content-start justify-content-md-center border-bottom-0 mb-4 wow fadeInUp">
             <li className="nav-item"> <a data-filter="*" className="nav-link rounded-0 active" href="">All</a></li>
-            <li className="nav-item"> <a data-filter=".parlor" href="" className="nav-link rounded-0">Parlor Skis</a></li>
+            <li className="nav-item"> <a data-filter="parlor" href="" className="nav-link rounded-0">Parlor Skis</a></li>
             <li className="nav-item"> <a data-filter=".ucf" href="" className="nav-link rounded-0">UCF BootCamp Projects</a></li>
             <li className="nav-item"> <a data-filter=".caseStudy" href="" className="nav-link rounded-0">Case Studies</a></li>
             <li className="nav-item"> <a data-filter=".inProgress" href="" className="nav-link rounded-0">In Progress</a></li>

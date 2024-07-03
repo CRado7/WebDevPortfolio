@@ -11,6 +11,8 @@ import Sunrise from '../assets/parlor/Sunrise.png';
 import Valhalla from '../assets/parlor/Valhalla.png';
 import WesternSkies from '../assets/parlor/WesternSkies.png';
 import mountainBackground from '../assets/background.jpg';
+import FireOfFlowers from '../assets/parlor/FireOfFlowers.png';
+import LifeSource from '../assets/parlor/LifeSource.png'; 
 import left from '../assets/left.svg';
 import right from '../assets/right.svg';
 
@@ -71,6 +73,18 @@ const designs = [
         name: 'Western Skies',
         image: WesternSkies,
         description: 'The Western Skies design is inspired by the beauty of the American west. The design features a red and blue color palette with a western motif.',
+    },
+    {
+        id: 10,
+        name: 'Fire of Flowers',
+        image: FireOfFlowers,
+        description: 'Fire of Flowers design was inspired by the beauty of sunflowers and the fierce flames of a fire. The design features a yellow and orange color palette with a sunflower motif.',
+    },
+    {
+        id: 11,
+        name: 'Life Source',
+        image: LifeSource,
+        description: 'Life Source design was inspired by the need to live on the ski slopes. The design features a green and blue color palette with a scientific motif.',
     },
 ];
 
